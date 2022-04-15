@@ -84,6 +84,8 @@ DATABASES = {
     }
 }
 
+#config para criar usuario personalizado
+AUTH_USER_MODEL = "usuarios.Usuario"
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -107,9 +109,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/sao_paulo'
 
 USE_I18N = True
 
