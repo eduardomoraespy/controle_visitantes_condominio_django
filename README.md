@@ -1,8 +1,8 @@
-# controle_visitantes_condominio_django
+# controle visitantes condomínio Django
 
 ## Proposta de desenvolvimento
 
-O condomínio Montanhas Azuis é um conceituado empreendimento que oferece conforto, qualidade e segurança para seus moradores. O condomínio nos procurou com o intuito de melhorar a experiência de trabalho de seus porteiros e tornar informatizado o processo de registro e administração de visitantes, de modo que os porteiros tenham acesso a uma página web e essas informações possam ser acessadas de qualquer lugar. Além do mais, desta forma, é possível garantir a segurança e a confiabilidade dos registros.
+O condomínio Polo Aeronáutico é um conceituado empreendimento que oferece conforto, qualidade e segurança para seus moradores e apaixonados pela aviação. O condomínio nos procurou com o intuito de melhorar a experiência de trabalho de seus porteiros e tornar informatizado o processo de registro e administração de visitantes, de modo que os porteiros tenham acesso a uma página web e essas informações possam ser acessadas de qualquer lugar. Além do mais, desta forma, é possível garantir a segurança e a confiabilidade dos registros.
 
 ## Entendendo o processo
 
