@@ -75,13 +75,3 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
-
-
-class Visitante(models.Model):
-    nome = models.CharField(
-        verbose_name='nome',
-        max_length=194
-    )
-
-    class Meta:
-        db_table = 'visitante'

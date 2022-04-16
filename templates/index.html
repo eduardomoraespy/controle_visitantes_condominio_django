@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+{% load static %}
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
@@ -10,8 +10,8 @@
         
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
         
-        <link href="css/sb-admin-2.min.css" rel="stylesheet">    
-        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">    
+        <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
     </head>
 
     <body id="page-top">
@@ -64,7 +64,7 @@
 
                     <div class="container-fluid">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">Página Inicial</h1>
+                            <h1 class="h3 mb-0 text-gray-800">{{nome_pagina}}</h1>
                         </div>
 
                         <div class="row">
@@ -151,20 +151,22 @@
                                             <th>Autorizado por</th>
                                             <th>Mais informações</th>
                                         </thead>
-
+                                        
                                         <tbody>
+                                            {% for visitantes in todos_visitantes%}
                                             <tr>
-                                                <td>Don Corleone</td>
-                                                <td>123.123.123.12</td>
-                                                <td>22 de agosto de 2079 as 15:30</td>
-                                                <td>22 de agosto de 2079 as 15:38</td>
-                                                <td>Darth Vader</td>
+                                                <td>{{visitantes.nome_completo}}</td>
+                                                <td>{{visitantes.cpf}}</td>
+                                                <td>{{visitantes.horario_chedada}}</td>
+                                                <td>{{visitantes.horario_autorizacao}}</td>
+                                                <td>{{visitantes.morador_resposavel}}</td>
                                                 <td>
                                                     <a href="#">
                                                         Ver informações
                                                     </a>
                                                 </td>
                                             </tr>
+                                            {% endfor%}
                                         </tbody>
                                     </table>
                                 </div>
@@ -175,7 +177,7 @@
                     <footer class="sticky-footer bg-white">
                         <div class="container my-auto">
                             <div class="copyright text-center my-auto">
-                                <span>Copyright © Django framework na prática</span>
+                                <span>Copyright © condomínio Polo Aeronáutico</span>
                             </div>
                         </div>
                     </footer>
@@ -204,8 +206,8 @@
             </div>
         </div>
 
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="js/sb-admin-2.min.js"></script>
+        <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
     </body>
 </html>

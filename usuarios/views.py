@@ -1,7 +1,15 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from visitantes import models
 
 # Create your views here.
 
 def home(request):
-    return HttpResponse('hello word')
+
+    todos_visitantes = models.Visitante.objects.all().order_by('id')
+    
+    context = {
+        'nome_pagina': 'Inicío da Dashborad',
+        'todos_visitantes':todos_visitantes
+    }# Dicionário de contexto
+
+    return render(request, 'index.html', context)
