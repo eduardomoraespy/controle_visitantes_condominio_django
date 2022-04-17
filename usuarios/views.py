@@ -5,7 +5,7 @@ from visitantes import models
 
 def home(request):
 
-    todos_visitantes = models.Visitante.objects.all().order_by('id')
+    todos_visitantes = models.Visitante.objects.all().order_by('-id')
     
     context = {
         'nome_pagina': 'Inicío da Dashborad',

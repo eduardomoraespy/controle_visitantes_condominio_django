@@ -13,3 +13,18 @@ class CadastroVisitanteForm(forms.ModelForm):
             'nome_completo', 'cpf', 'data_nascimento',
             'numero_casa', 'placa_veiculo', 
         ]
+        error_messages = {
+            'nome_completo':{
+                'required':'O nome completo do visitante é obrigatório para o registro'
+            },
+            'cpf':{
+                'required':'O CPF do visitante é obrigatório para o registro'
+            },
+            'data_nascimento':{
+                'required':'A Data de Nascimento do visitante é obrigatória para o registro',
+                'invalid':'Informe uma Data válida para a Data de Nascimento (DD/MM/AAAA)'
+            },
+            'numero_casa':{
+                'required':'Por favor informe o Número da casa a ser visitada'
+            },
+        }
