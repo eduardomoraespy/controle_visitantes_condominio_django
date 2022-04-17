@@ -61,6 +61,33 @@ class Visitante(models.Model):
         on_delete=models.PROTECT
     )
 
+    # tratando campo vazio ou null
+    def get_horario_saida(self):
+        if self.horario_saida:
+            return self.horario_saida
+        
+        return 'Horário de saída não registrado'
+
+    def get_horario_autorizacao(self):
+        if self.horario_autorizacao:
+            return self.horario_autorizacao
+        
+        return 'Visitante aguardando autorização'
+    
+    def get_morador_resposavel(self):
+        if self.morador_resposavel:
+            return self.morador_resposavel
+        
+        return 'Visitante aguardando autorização'
+    
+    def get_placa_veiculo(self):
+        if self.placa_veiculo:
+            return self.placa_veiculo
+        
+        return 'Veículo não registrado'
+
+
+
     class Meta:
         verbose_name = 'visitante'
         verbose_name_plural = 'visitantes'
