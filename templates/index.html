@@ -4,6 +4,15 @@
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">{{nome_pagina}}</h1>
+
+        <a class="btn btn-primary btn-icon-split btn-sm" href="{% url 'registrar_visitante' %}">
+            <span class="text">
+                Registrar Visitante
+            </span>
+            <span class="icon text-white-sm">
+                <i class="fas fa-user-plus"></i>
+            </span>
+        </a>
     </div>
 
     {% if messages %}
@@ -108,7 +117,7 @@
                             <td>{{visitantes.get_horario_autorizacao}}</td>
                             <td>{{visitantes.get_morador_resposavel}}</td>
                             <td>
-                                <a href="">
+                                <a href="{% url 'informacoes_visitante' id=visitantes.id %}">
                                     Ver informações
                                 </a>
                             </td>
