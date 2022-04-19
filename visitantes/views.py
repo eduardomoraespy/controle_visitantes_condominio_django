@@ -43,18 +43,19 @@ def informacoes_visitante(request, id):
         form = AutorizaVisitanteForm(request.POST, instance=visitante)
 
         if form.is_valid():
-            form.save()
+            instance = form.save(commit=False)
+            instance.save()
 
             messages.success(
-                request, 'Entrada de Visitante autorizada com sucesso'
+                request, f'Entrada de visitante {instance.nome_completo} autorizada pelo morador {instance.morador_resposavel} com sucesso'
             )
 
             return redirect('home')
 
     context = {
         'nome_pagina': 'Informações visitante',
-        'visitante':visitante,
-        'form':form
+        'visitante' :visitante,
+        'form' :form
     }
 
     return render(request, 'informacoes_visitante.html', context)
