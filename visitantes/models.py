@@ -3,6 +3,12 @@ from django.db import models
 
 class Visitante(models.Model):
 
+    STATUS_VISITANTE = [
+        ('AGUARDANDO', 'Aguardando autorização'),
+        ('EM_VISITA', 'Em Visita'),
+        ('FINALIZADO', 'Visita Fianlizada'),
+    ]
+
     nome_completo = models.CharField(
         verbose_name='Nome Comple',
         max_length=194
@@ -59,6 +65,13 @@ class Visitante(models.Model):
         'porteiros.Porteiro',
         verbose_name='Porteiro responsável pelo registro',
         on_delete=models.PROTECT
+    )
+
+    status = models.CharField(
+        verbose_name='Status',
+        max_length=10,
+        choices=STATUS_VISITANTE,
+        default='AGUARDANDO'
     )
 
     # tratando campo vazio ou null
