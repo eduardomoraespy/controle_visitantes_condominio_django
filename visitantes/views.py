@@ -4,6 +4,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from visitantes.forms import CadastroVisitanteForm, AutorizaVisitanteForm
 from visitantes.models import Visitante
 
+from django.utils import timezone
+
 
 def registrar_visitante(request):
 
@@ -44,10 +46,12 @@ def informacoes_visitante(request, id):
 
         if form.is_valid():
             instance = form.save(commit=False)
+            instance.status = 'EM_VISITA'
+            instance.horario_autorizacao = timezone.now()
             instance.save()
 
             messages.success(
-                request, f'Entrada de visitante {instance.nome_completo} autorizada pelo morador {instance.morador_resposavel} com sucesso'
+                request, f'Entrada do(a) visitante {instance.nome_completo} autorizada pelo(a) morador(a){instance.morador_resposavel} com sucesso'
             )
 
             return redirect('home')
