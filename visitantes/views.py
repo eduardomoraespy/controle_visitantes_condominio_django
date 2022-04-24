@@ -6,6 +6,8 @@ from visitantes.models import Visitante
 
 from django.utils import timezone
 
+from django.http import HttpResponseNotAllowed
+
 
 def registrar_visitante(request):
 
@@ -63,3 +65,30 @@ def informacoes_visitante(request, id):
     }
 
     return render(request, 'informacoes_visitante.html', context)
+
+
+def finalizar_visita(request, id):
+
+    if request.method == "POST":
+        visitante = get_object_or_404(
+            Visitante,
+            id=id
+        )
+
+        visitante.status = 'FINALIZADO'
+        visitante.horario_saida = timezone.now()
+
+        visitante.save()
+
+        messages.success(
+            request,
+            f'Visita do(a) {visitante.nome_completo} finalizado com sucesso'
+        )
+
+        return redirect('home')
+    
+    else:
+        return HttpResponseNotAllowed(
+            ['POST'],
+            'Método não permitido'
+        )
