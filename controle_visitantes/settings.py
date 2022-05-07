@@ -4,8 +4,8 @@ import os
 import sys
 
 import django_on_heroku
+import django_heroku
 
-django_on_heroku.settings(locals())
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +20,7 @@ SECRET_KEY = 'django-insecure-rv770nv!if9$hq$v17(@_yfyevabm0k%3k+6goi(sew*5#b_(n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'https://controle-visitiantes-cond-aero.herokuapp.com/']
 
 sys.path.append(
     os.path.join(BASE_DIR, 'apps')
@@ -142,4 +142,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 
-#django_on_heroku.settings(locals())
+django_on_heroku.settings(locals())
+
+django_heroku.settings(locals())
