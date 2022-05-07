@@ -4,7 +4,7 @@ from visitantes import models
 
 from django.utils import timezone
 
-@login_required
+#@login_required
 def home(request):
 
     todos_visitantes = models.Visitante.objects.order_by('-horario_chegada')
