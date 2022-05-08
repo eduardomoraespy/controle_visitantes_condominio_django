@@ -84,9 +84,13 @@ WSGI_APPLICATION = 'controle_visitantes.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "dcomvmfajlvc8q",
+        "USER": "nzrbdiokmynnkf",
+        "PASSWORD": "70589fc7a43dc9ace88d8d92454c9b38c2cc33282e74e2867d716b498bd9f448",
+        "HOST": "ec2-54-158-247-210.compute-1.amazonaws.com",
+        "PORT": 5432,
     }
 }
 
