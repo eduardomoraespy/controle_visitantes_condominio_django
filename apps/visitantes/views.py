@@ -9,7 +9,7 @@ from django.utils import timezone
 
 from django.http import HttpResponseNotAllowed
 
-#@login_required
+@login_required
 def registrar_visitante(request):
 
     form = CadastroVisitanteForm()
@@ -37,7 +37,7 @@ def registrar_visitante(request):
 
     return render(request, 'registrar_visitante/registrar_visitante.html', context)
 
-#@login_required
+@login_required
 def informacoes_visitante(request, id):
 
     visitante = get_object_or_404(Visitante, id=id)
@@ -67,7 +67,7 @@ def informacoes_visitante(request, id):
 
     return render(request, 'informacoes_visitante.html', context)
 
-#@login_required
+@login_required
 def finalizar_visita(request, id):
 
     if request.method == "POST":
