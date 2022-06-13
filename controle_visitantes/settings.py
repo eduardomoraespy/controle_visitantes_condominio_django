@@ -86,10 +86,10 @@ WSGI_APPLICATION = 'controle_visitantes.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "dcomvmfajlvc8q",
-        "USER": "nzrbdiokmynnkf",
-        "PASSWORD": "70589fc7a43dc9ace88d8d92454c9b38c2cc33282e74e2867d716b498bd9f448",
-        "HOST": "ec2-54-158-247-210.compute-1.amazonaws.com",
+        "NAME": "dbhascb10aug7s",
+        "USER": "vxepkmlrwkzlix",
+        "PASSWORD": "09ee1473c48f5318fed934ad209bbb72cefdbb7f94db5ac1606d86502bc9f339",
+        "HOST": "ec2-54-165-90-230.compute-1.amazonaws.com",
         "PORT": 5432,
     }
 }
