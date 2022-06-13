@@ -1,5 +1,7 @@
 # controle visitantes condomínio Django
 
+link para acessar aplicação: https://controle-visitiantes-cond-aero.herokuapp.com/login/?next=/
+
 ## Proposta de desenvolvimento
 
 O condomínio Polo Aeronáutico é um conceituado empreendimento que oferece conforto, qualidade e segurança para seus moradores e apaixonados pela aviação. O condomínio nos procurou com o intuito de melhorar a experiência de trabalho de seus porteiros e tornar informatizado o processo de registro e administração de visitantes, de modo que os porteiros tenham acesso a uma página web e essas informações possam ser acessadas de qualquer lugar. Além do mais, desta forma, é possível garantir a segurança e a confiabilidade dos registros.
@@ -18,7 +20,7 @@ Com todo esse cenário em mente, precisamos desenvolver uma página web que seja
 
 Após o registro, o porteiro deve entrar em contato com um morador que esteja na casa no momento e informar à respeito da visita para que o morador autorize a entrada do visitante. Com a autorização concedida, o porteiro deve colocar no caderno o **nome do morador que autorizou a entrada do visitante** e o **horário em que essa autorização ocorreu**. Ao final da visita, o **horário em que o visitante deixou as dependências do condomínio** deve ser registrado junto do **nome do porteiro responsável pelo registro**. O fluxo e as etapas de todo o processo são as seguintes:
 
-<img src="https://github.com/tchaguitos/djangoframeworknapratica/raw/master/.gitbook/assets/processo-registro.png">
+
 
 A divisão do processo por etapas faz com que fiquem mais claras as atividades e a ordem em que elas devem ocorrer. Enxergando desta forma, podemos pensar em formas de dividir o preenchimento das informações e a automatização de determinadas informações.
 
@@ -58,3 +60,4 @@ Além das informações acima, ainda precisamos registrar as seguintes informaç
 
 
 
+link para acessar aplicação: https://controle-visitiantes-cond-aero.herokuapp.com/login/?next=/
